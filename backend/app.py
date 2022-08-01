@@ -48,9 +48,9 @@ def search_grpc():
 
 
 def search():
-    flow = Flow.load_config("flow-local.yml")
-    with flow:
-        flow.block()
+    c = Client(host=HOST)
+    d = c.post('/search', Document(text='software'))
+    print(d[0].text)
 
 
 @click.command()

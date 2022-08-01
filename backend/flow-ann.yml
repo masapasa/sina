@@ -1,0 +1,13 @@
+jtype: Flow
+with:
+  protocol: http  # remove the port
+executors:
+  - name: indexer
+    uses: jinahub://SimpleIndexer
+    uses_with:
+      dim: 300
+      columns:
+        - ['answer_type', 'str']
+        - ['source', 'str']
+    uses_metas:
+      workspace: workspace
